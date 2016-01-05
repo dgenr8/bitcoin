@@ -221,6 +221,9 @@
     </message>
 </context>
 <context>
+    <name>BanTableModel</name>
+    </context>
+<context>
     <name>BitcoinGUI</name>
     <message>
         <source>Sign &amp;message...</source>
@@ -1279,10 +1282,6 @@
         <translation>La demande de paiement %1 est trop grande (%2 octets, %3 octets permis).</translation>
     </message>
     <message>
-        <source>Payment request DoS protection</source>
-        <translation>Protection DdS des demandes de paiement</translation>
-    </message>
-    <message>
         <source>Error communicating with %1: %2</source>
         <translation>Erreur de communication avec %1 : %2</translation>
     </message>
@@ -1471,14 +1470,6 @@
         <translation>Services</translation>
     </message>
     <message>
-        <source>Starting Height</source>
-        <translation>Hauteur de démarrage</translation>
-    </message>
-    <message>
-        <source>Sync Height</source>
-        <translation>Hauteur de synchro</translation>
-    </message>
-    <message>
         <source>Ban Score</source>
         <translation>Pointage des bannissements</translation>
     </message>
@@ -1493,14 +1484,6 @@
     <message>
         <source>Last Receive</source>
         <translation>Dernière réception</translation>
-    </message>
-    <message>
-        <source>Bytes Sent</source>
-        <translation>Octets envoyés</translation>
-    </message>
-    <message>
-        <source>Bytes Received</source>
-        <translation>Octets reçus</translation>
     </message>
     <message>
         <source>Ping Time</source>
@@ -1599,12 +1582,16 @@
         <translation>Sortant</translation>
     </message>
     <message>
-        <source>Unknown</source>
-        <translation>Inconnu</translation>
+        <source>Yes</source>
+        <translation>Oui</translation>
     </message>
     <message>
-        <source>Fetching...</source>
-        <translation>Récupération...</translation>
+        <source>No</source>
+        <translation>Non</translation>
+    </message>
+    <message>
+        <source>Unknown</source>
+        <translation>Inconnu</translation>
     </message>
 </context>
 <context>
@@ -1971,10 +1958,6 @@
         <translation>Copier la monnaie</translation>
     </message>
     <message>
-        <source>Total Amount %1 (= %2)</source>
-        <translation>Montant total %1 (= %2)</translation>
-    </message>
-    <message>
         <source>or</source>
         <translation>ou</translation>
     </message>
@@ -2009,10 +1992,6 @@
     <message numerus="yes">
         <source>Estimated to begin confirmation within %n block(s).</source>
         <translation><numerusform>Il est estimé que la confirmation commencera dans %n bloc.</numerusform><numerusform>Il est estimé que la confirmation commencera dans %n blocs.</numerusform></translation>
-    </message>
-    <message>
-        <source>Pay only the minimum fee of %1</source>
-        <translation>Payer seulement les frais minimum de %1</translation>
     </message>
     <message>
         <source>The recipient address is not valid. Please recheck.</source>
@@ -2793,12 +2772,12 @@
         <translation>Accepter les commandes de JSON-RPC et de la ligne de commande</translation>
     </message>
     <message>
-        <source>Run in the background as a daemon and accept commands</source>
-        <translation>Fonctionner en arrière-plan en tant que démon et accepter les commandes</translation>
+        <source>Error: A fatal internal error occurred, see debug.log for details</source>
+        <translation>Erreur : une erreur interne fatale s'est produite. Voir debug.log pour plus de détails</translation>
     </message>
     <message>
-        <source>Use the test network</source>
-        <translation>Utiliser le réseau de test</translation>
+        <source>Run in the background as a daemon and accept commands</source>
+        <translation>Fonctionner en arrière-plan en tant que démon et accepter les commandes</translation>
     </message>
     <message>
         <source>Accept connections from outside (default: 1 if no -proxy or -connect)</source>
@@ -2809,10 +2788,6 @@
         <translation>Se lier à l'adresse donnée et toujours l'écouter. Utilisez la notation [host]:port pour l'IPv6</translation>
     </message>
     <message>
-        <source>Continuously rate-limit free transactions to &lt;n&gt;*1000 bytes per minute (default: %u)</source>
-        <translation>Limiter continuellement les transactions gratuites à &lt;n&gt;*1000 octets par minute (par défaut : %u)</translation>
-    </message>
-    <message>
         <source>Delete all wallet transactions and only recover those parts of the blockchain through -rescan on startup</source>
         <translation>Supprimer toutes les transactions du portefeuille et ne récupérer que ces parties de la chaîne de bloc avec -rescan au démarrage</translation>
     </message>
@@ -2821,24 +2796,8 @@
         <translation>Distribué sous la licence MIT d'utilisation d'un logiciel. Consultez le fichier joint COPYING ou &lt;http://www.opensource.org/licenses/mit-license.php&gt;.</translation>
     </message>
     <message>
-        <source>Enter regression test mode, which uses a special chain in which blocks can be solved instantly.</source>
-        <translation>Passer en mode de test de régression qui utilise une chaîne spéciale dans laquelle les blocs sont résolus instantanément.</translation>
-    </message>
-    <message>
         <source>Execute command when a wallet transaction changes (%s in cmd is replaced by TxID)</source>
         <translation>Exécuter la commande lorsqu'une transaction de portefeuille change (%s dans la commande est remplacée par TxID)</translation>
-    </message>
-    <message>
-        <source>In this mode -genproclimit controls how many blocks are generated immediately.</source>
-        <translation>Dans ce mode -genproclimit contrôle combien de blocs sont générés immédiatement.</translation>
-    </message>
-    <message>
-        <source>Maximum total fees to use in a single wallet transaction; setting this too low may abort large transactions (default: %s)</source>
-        <translation>Total maximal des frais à utiliser en une seule transaction de portefeuille. Le définir trop bas pourrait interrompre les grosses transactions (par défaut : %s)</translation>
-    </message>
-    <message>
-        <source>Reduce storage requirements by pruning (deleting) old blocks. This mode disables wallet support and is incompatible with -txindex. Warning: Reverting this setting requires re-downloading the entire blockchain. (default: 0 = disable pruning blocks, &gt;%u = target size in MiB to use for block files)</source>
-        <translation>Réduire les exigences de stockage en élaguant (supprimant) les anciens blocs. Ce mode désactive la prise en charge de portefeuilles et n'est pas compatible avec -txindex. Avertissement : configurer ce paramètre à sa valeur antérieure retéléchargera complètement la chaîne de blocs (par défaut : 0 = désactiver l'élagage des blocs, &gt;%u = taille cible en Mo à utiliser pour les fichiers de blocs).</translation>
     </message>
     <message>
         <source>Set the number of script verification threads (%u to %d, 0 = auto, &lt;0 = leave that many cores free, default: %d)</source>
@@ -2853,8 +2812,12 @@
         <translation>Impossible de se lier à %s sur cet ordinateur. Bitcoin Core fonctionne probablement déjà.</translation>
     </message>
     <message>
-        <source>Warning: -paytxfee is set very high! This is the transaction fee you will pay if you send a transaction.</source>
-        <translation>Avertissement : -paytxfee est réglé sur un montant très élevé ! Il s'agit des frais de transaction que vous payerez si vous envoyez une transaction.</translation>
+        <source>WARNING: abnormally high number of blocks generated, %d blocks received in the last %d hours (%d expected)</source>
+        <translation>AVERTISSEMENT : un nombre anormalement élevé de blocs a été généré, %d blocs reçus durant les %d dernières heures (%d attendus)</translation>
+    </message>
+    <message>
+        <source>WARNING: check your network connection, %d blocks received in the last %d hours (%d expected)</source>
+        <translation>AVERTISSEMENT : vérifiez votre connexion réseau, %d blocs reçus durant les %d dernières heures (%d attendus)</translation>
     </message>
     <message>
         <source>Warning: The network does not appear to fully agree! Some miners appear to be experiencing issues.</source>
@@ -2865,10 +2828,6 @@
         <translation>Avertissement : nous ne semblons pas être en accord complet avec nos pairs ! Vous pourriez avoir besoin d'effectuer une mise à niveau, ou d'autres nœuds du réseau pourraient avoir besoin d'effectuer une mise à niveau.</translation>
     </message>
     <message>
-        <source>Warning: error reading wallet.dat! All keys read correctly, but transaction data or address book entries might be missing or incorrect.</source>
-        <translation>Avertissement : une erreur est survenue lors de la lecture de wallet.dat ! Toutes les clefs ont été lues correctement mais les données de transaction ou les entrées du carnet d'adresses sont peut-être incorrectes ou manquantes.</translation>
-    </message>
-    <message>
         <source>Warning: wallet.dat corrupt, data salvaged! Original wallet.dat saved as wallet.{timestamp}.bak in %s; if your balance or transactions are incorrect you should restore from a backup.</source>
         <translation>Avertissement : wallet.dat corrompu, données récupérées ! Le fichier wallet.dat original a été enregistré en tant que wallet.{timestamp}.bak dans %s ; si votre solde ou transactions sont incorrects vous devriez effectuer une restauration depuis une sauvegarde.</translation>
     </message>
@@ -2877,16 +2836,8 @@
         <translation>Pairs de la liste blanche se connectant à partir du masque réseau ou de l'IP donné. Peut être spécifié plusieurs fois.</translation>
     </message>
     <message>
-        <source>(default: 1)</source>
-        <translation>(par défaut : 1)</translation>
-    </message>
-    <message>
         <source>&lt;category&gt; can be:</source>
         <translation>&lt;category&gt; peut être :</translation>
-    </message>
-    <message>
-        <source>Attempt to recover private keys from a corrupt wallet.dat</source>
-        <translation>Tenter de récupérer les clefs privées d'un wallet.dat corrompu</translation>
     </message>
     <message>
         <source>Block creation options:</source>
@@ -2933,20 +2884,12 @@
         <translation>Erreur lors de l'ouverture de la base de données des blocs</translation>
     </message>
     <message>
-        <source>Error: A fatal internal error occured, see debug.log for details</source>
-        <translation>Erreur : une erreur interne fatale s'est produite. Voir debug.log pour des détails</translation>
-    </message>
-    <message>
         <source>Error: Disk space is low!</source>
         <translation>Erreur : l'espace disque est faible !</translation>
     </message>
     <message>
         <source>Failed to listen on any port. Use -listen=0 if you want this.</source>
         <translation>Échec de l'écoute sur un port quelconque. Utilisez -listen=0 si vous voulez ceci.</translation>
-    </message>
-    <message>
-        <source>If &lt;category&gt; is not supplied, output all debugging information.</source>
-        <translation>Si &lt;category&gt; n'est pas indiqué, extraire toutes les données de débogage.</translation>
     </message>
     <message>
         <source>Importing...</source>
@@ -2989,10 +2932,6 @@
         <translation>Spécifiez le fichier de portefeuille (dans le répertoire de données)</translation>
     </message>
     <message>
-        <source>This is intended for regression testing tools and app development.</source>
-        <translation>Ceci est à l'intention des outils de test de régression et du développement applicatif.</translation>
-    </message>
-    <message>
         <source>Use UPnP to map the listening port (default: %u)</source>
         <translation>Utiliser l'UPnP pour mapper le port d'écoute (par défaut : %u)</translation>
     </message>
@@ -3021,16 +2960,8 @@
         <translation>Vous devez reconstruire la base de données en utilisant -reindex afin de modifier -txindex</translation>
     </message>
     <message>
-        <source>Imports blocks from external blk000??.dat file</source>
-        <translation>Importe des blocs depuis un fichier blk000??.dat externe</translation>
-    </message>
-    <message>
         <source>Allow JSON-RPC connections from specified source. Valid for &lt;ip&gt; are a single IP (e.g. 1.2.3.4), a network/netmask (e.g. 1.2.3.4/255.255.255.0) or a network/CIDR (e.g. 1.2.3.4/24). This option can be specified multiple times</source>
         <translation>Permettre les connexions JSON-RPC de sources spécifiques. Valide pour &lt;ip&gt; qui sont une IP simple (p. ex. 1.2.3.4), un réseau/masque réseau (p. ex. 1.2.3.4/255.255.255.0) ou un réseau/CIDR (p. ex. 1.2.3.4/24). Cette option peut être être spécifiée plusieurs fois</translation>
-    </message>
-    <message>
-        <source>An error occurred while setting up the RPC address %s port %u for listening: %s</source>
-        <translation>Une erreur est survenue lors de la mise en place de l'adresse %s port %u d'écoute RPC  : %s</translation>
     </message>
     <message>
         <source>Bind to given address and whitelist peers connecting to it. Use [host]:port notation for IPv6</source>
@@ -3057,20 +2988,8 @@
         <translation>Erreur : l'écoute des connexions entrantes a échoué (l'écoute a retourné l'erreur %s)</translation>
     </message>
     <message>
-        <source>Error: Unsupported argument -socks found. Setting SOCKS version isn't possible anymore, only SOCKS5 proxies are supported.</source>
-        <translation>Erreur : l'argument non pris en charge -socks a été trouvé. Il n'est plus possible de définir la version de SOCKS, seuls les serveurs mandataires SOCKS5 sont pris en charge.</translation>
-    </message>
-    <message>
         <source>Execute command when a relevant alert is received or we see a really long fork (%s in cmd is replaced by message)</source>
         <translation>Exécuter une commande lorsqu'une alerte pertinente est reçue ou si nous voyons une bifurcation vraiment étendue (%s dans la commande est remplacé par le message)</translation>
-    </message>
-    <message>
-        <source>Fees (in BTC/Kb) smaller than this are considered zero fee for relaying (default: %s)</source>
-        <translation>Les frais (en BTC/Ko) inférieurs à ce seuil sont considérés comme étant nuls pour le relayage (par défaut : %s)</translation>
-    </message>
-    <message>
-        <source>Fees (in BTC/Kb) smaller than this are considered zero fee for transaction creation (default: %s)</source>
-        <translation>Les frais (en BTC/Ko) inférieurs à ce seuil sont considérés comme étant nuls pour la création de transactions (par défaut : %s)</translation>
     </message>
     <message>
         <source>If paytxfee is not set, include enough fee so transactions begin confirmation on average within n blocks (default: %u)</source>
@@ -3083,10 +3002,6 @@
     <message>
         <source>Maximum size of data in data carrier transactions we relay and mine (default: %u)</source>
         <translation>Quantité maximale de données dans les transactions du porteur de données que nous relayons et minons (par défaut : %u)</translation>
-    </message>
-    <message>
-        <source>Prune configured below the minimum of %d MB.  Please use a higher number.</source>
-        <translation>L'élagage est configuré au-dessous du minimum de %d Mo. Veuillez utiliser un nombre plus élevé.</translation>
     </message>
     <message>
         <source>Query for peer addresses via DNS lookup, if low on addresses (default: 1 unless -connect)</source>
@@ -3113,38 +3028,6 @@
         <translation>Ce produit comprend des logiciels développés par le projet OpenSSL pour être utilisés dans la boîte à outils OpenSSL &lt;https://www.openssl.org/&gt; et un logiciel cryptographique écrit par Eric Young, ainsi qu'un logiciel UPnP écrit par Thomas Bernard.</translation>
     </message>
     <message>
-        <source>To use bitcoind, or the -server option to bitcoin-qt, you must set an rpcpassword in the configuration file:
-%s
-It is recommended you use the following random password:
-rpcuser=bitcoinrpc
-rpcpassword=%s
-(you do not need to remember this password)
-The username and password MUST NOT be the same.
-If the file does not exist, create it with owner-readable-only file permissions.
-It is also recommended to set alertnotify so you are notified of problems;
-for example: alertnotify=echo %%s | mail -s "Bitcoin Alert" admin@foo.com
-</source>
-        <translation>Pour utiliser bitcoind, ou l'option -server de bitcoin-qt, vous devez définir un mot de passe rpc dans le fichier de configuration :
-%s
-Il est recommandé d'utiliser le mot de passe aléatoire suivant :
-rpcuser=bitcoinrpc
-rpcpassword=%s
-(vous n'avez pas à mémoriser ce mot de passe)
-Le nom d'utilisateur et le mot de passe NE DOIVENT PAS être identiques.
-Si le fichier n'existe pas, créez-le avec la permission lecture-seule-par-le-propriétaire.
-Il est aussi recommandé de définir alertnotify afin que les problèmes vous soient signalés ;
-par exemple : alertnotify=echo %%s | mail -s "Alerte Bitcoin" admin@foo.com
-</translation>
-    </message>
-    <message>
-        <source>Warning: -maxtxfee is set very high! Fees this large could be paid on a single transaction.</source>
-        <translation>Avertissement :-maxtxfee est défini très haut ! Des frais aussi élevés pourraient être payés sur une seule transaction.</translation>
-    </message>
-    <message>
-        <source>Warning: Please check that your computer's date and time are correct! If your clock is wrong Bitcoin Core will not work properly.</source>
-        <translation>Avertissement : veuillez vérifier que l'heure et la date de votre ordinateur sont correctes ! Si votre horloge n'est pas à l'heure, Bitcoin Core ne fonctionnera pas correctement.</translation>
-    </message>
-    <message>
         <source>Whitelisted peers cannot be DoS banned and their transactions are always relayed, even if they are already in the mempool, useful e.g. for a gateway</source>
         <translation>Les pairs de la liste blanche ne peuvent pas être bannis DoS et leurs transactions sont toujours relayées, même si elles sont déjà dans le mempool, utile p. ex. pour une passerelle</translation>
     </message>
@@ -3165,20 +3048,8 @@ par exemple : alertnotify=echo %%s | mail -s "Alerte Bitcoin" admin@foo.com
         <translation>Activation de la meilleure chaîne...</translation>
     </message>
     <message>
-        <source>Allow self signed root certificates (default: 0)</source>
-        <translation>Permettre les certificats racine autosignés (par défaut : 0)</translation>
-    </message>
-    <message>
-        <source>Can't run with a wallet in prune mode.</source>
-        <translation>L'exécution est impossible quand le portefeuille est en mode élagage.</translation>
-    </message>
-    <message>
         <source>Cannot resolve -whitebind address: '%s'</source>
         <translation>Impossible de résoudre l'adresse -whitebind : « %s »</translation>
-    </message>
-    <message>
-        <source>Choose data directory on startup (default: 0)</source>
-        <translation>Choisir un répertoire de données au démarrage (par défaut : 0)</translation>
     </message>
     <message>
         <source>Connect through SOCKS5 proxy</source>
@@ -3189,24 +3060,12 @@ par exemple : alertnotify=echo %%s | mail -s "Alerte Bitcoin" admin@foo.com
         <translation>Copyright © 2009-%i Les développeurs de Bitcoin Core</translation>
     </message>
     <message>
-        <source>Could not parse -rpcbind value %s as network address</source>
-        <translation>Impossible d'analyser la valeur -rpcbind %s comme adresse réseau</translation>
-    </message>
-    <message>
         <source>Error loading wallet.dat: Wallet requires newer version of Bitcoin Core</source>
         <translation>Erreur lors du chargement de wallet.dat : le portefeuille exige une version plus récente de Bitcoin Core</translation>
     </message>
     <message>
         <source>Error reading from database, shutting down.</source>
         <translation>Erreur de lecture de la base de données, fermeture en cours.</translation>
-    </message>
-    <message>
-        <source>Error: Unsupported argument -tor found, use -onion.</source>
-        <translation>Erreur : argument non pris en charge -tor trouvé, utiliser -onion.</translation>
-    </message>
-    <message>
-        <source>Fee (in BTC/kB) to add to transactions you send (default: %s)</source>
-        <translation>Les frais (en BTC/ko) à ajouter aux transactions que vous envoyez (par défaut : %s)</translation>
     </message>
     <message>
         <source>Information</source>
@@ -3249,28 +3108,16 @@ par exemple : alertnotify=echo %%s | mail -s "Alerte Bitcoin" admin@foo.com
         <translation>Options de relais du nœud :</translation>
     </message>
     <message>
-        <source>RPC SSL options: (see the Bitcoin Wiki for SSL setup instructions)</source>
-        <translation>Options RPC SSL : (voir le wiki Bitcoin pour les instructions de configuration de SSL)</translation>
-    </message>
-    <message>
         <source>RPC server options:</source>
         <translation>Options du serveur RPC :</translation>
     </message>
     <message>
-        <source>RPC support for HTTP persistent connections (default: %d)</source>
-        <translation>Prise en charge de RPC pour les connexions persistantes HTTP (par défaut : %d)</translation>
-    </message>
-    <message>
-        <source>Randomly drop 1 of every &lt;n&gt; network messages</source>
-        <translation>Abandonner aléatoirement 1 message du réseau sur &lt;n&gt;</translation>
-    </message>
-    <message>
-        <source>Randomly fuzz 1 of every &lt;n&gt; network messages</source>
-        <translation>Tester aléatoirement 1 message du réseau sur &lt;n&gt;</translation>
-    </message>
-    <message>
         <source>Rebuild block chain index from current blk000??.dat files on startup</source>
         <translation>Reconstruire au démarrage l'index de la chaîne de blocs à partir des fichiers blk000??.dat actuels</translation>
+    </message>
+    <message>
+        <source>Receive and display P2P network alerts (default: %u)</source>
+        <translation>Recevoir et afficher les alertes du réseau poste à poste (%u par défaut)</translation>
     </message>
     <message>
         <source>Send trace/debug info to console instead of debug.log file</source>
@@ -3281,20 +3128,8 @@ par exemple : alertnotify=echo %%s | mail -s "Alerte Bitcoin" admin@foo.com
         <translation>Envoyer si possible les transactions comme étant sans frais (par défaut : %u)</translation>
     </message>
     <message>
-        <source>Set SSL root certificates for payment request (default: -system-)</source>
-        <translation>Définir les certificats racine SSL pour les demandes de paiement (par défaut : -système-)</translation>
-    </message>
-    <message>
-        <source>Set language, for example "de_DE" (default: system locale)</source>
-        <translation>Définir la langue, par exemple « fr_CA » (par défaut : la langue du système)</translation>
-    </message>
-    <message>
         <source>Show all debugging options (usage: --help -help-debug)</source>
         <translation>Montrer toutes les options de débogage (utilisation : --help --help-debug)</translation>
-    </message>
-    <message>
-        <source>Show splash screen on startup (default: 1)</source>
-        <translation>Afficher la page de garde au démarrage (par défaut : 1)</translation>
     </message>
     <message>
         <source>Shrink debug.log file on client startup (default: 1 when no -debug)</source>
@@ -3303,10 +3138,6 @@ par exemple : alertnotify=echo %%s | mail -s "Alerte Bitcoin" admin@foo.com
     <message>
         <source>Signing transaction failed</source>
         <translation>La signature de la transaction a échoué</translation>
-    </message>
-    <message>
-        <source>Start minimized</source>
-        <translation>Démarrer minimisé</translation>
     </message>
     <message>
         <source>The transaction amount is too small to pay the fee</source>
@@ -3333,16 +3164,8 @@ par exemple : alertnotify=echo %%s | mail -s "Alerte Bitcoin" admin@foo.com
         <translation>Transaction trop volumineuse</translation>
     </message>
     <message>
-        <source>UI Options:</source>
-        <translation>Options de l'IU :</translation>
-    </message>
-    <message>
         <source>Unable to bind to %s on this computer (bind returned error %s)</source>
         <translation>Impossible de se lier à %s sur cet ordinateur (bind a retourné l'erreur %s)</translation>
-    </message>
-    <message>
-        <source>Use UPnP to map the listening port (default: 1 when listening)</source>
-        <translation>Utiliser l'UPnP pour mapper le port d'écoute (par défaut : 1 lors de l'écoute)</translation>
     </message>
     <message>
         <source>Username for JSON-RPC connections</source>
@@ -3357,20 +3180,8 @@ par exemple : alertnotify=echo %%s | mail -s "Alerte Bitcoin" admin@foo.com
         <translation>Avertissement</translation>
     </message>
     <message>
-        <source>Warning: Unsupported argument -benchmark ignored, use -debug=bench.</source>
-        <translation>Avertissement : l'argument -benchmark non pris en charge a été ignoré, utiliser -debug=bench.</translation>
-    </message>
-    <message>
-        <source>Warning: Unsupported argument -debugnet ignored, use -debug=net.</source>
-        <translation>Avertissement : l'argument -debugnet non pris en charge a été ignoré, utiliser -debug=net.</translation>
-    </message>
-    <message>
         <source>Zapping all transactions from wallet...</source>
         <translation>Supprimer toutes les transactions du portefeuille...</translation>
-    </message>
-    <message>
-        <source>on startup</source>
-        <translation>au démarrage</translation>
     </message>
     <message>
         <source>wallet.dat corrupt, salvage failed</source>
@@ -3383,18 +3194,6 @@ par exemple : alertnotify=echo %%s | mail -s "Alerte Bitcoin" admin@foo.com
     <message>
         <source>Execute command when the best block changes (%s in cmd is replaced by block hash)</source>
         <translation>Exécuter la commande lorsque le meilleur bloc change (%s dans cmd est remplacé par le hachage du bloc)</translation>
-    </message>
-    <message>
-        <source>Upgrade wallet to latest format</source>
-        <translation>Mettre à niveau le portefeuille vers le format le plus récent</translation>
-    </message>
-    <message>
-        <source>Rescan the block chain for missing wallet transactions</source>
-        <translation>Réanalyser la chaîne de blocs pour les transactions de portefeuille manquantes</translation>
-    </message>
-    <message>
-        <source>Use OpenSSL (https) for JSON-RPC connections</source>
-        <translation>Utiliser OpenSSL (https) pour les connexions JSON-RPC</translation>
     </message>
     <message>
         <source>This help message</source>
@@ -3417,16 +3216,8 @@ par exemple : alertnotify=echo %%s | mail -s "Alerte Bitcoin" admin@foo.com
         <translation>(1 = conserver les métadonnées de transmission, par ex. les informations du propriétaire du compte et de la demande de paiement, 2 = abandonner les métadonnées de transmission)</translation>
     </message>
     <message>
-        <source>Flush database activity from memory pool to disk log every &lt;n&gt; megabytes (default: %u)</source>
-        <translation>Purger l’activité de la base de données de la zone de mémoire vers le journal sur disque tous les &lt;n&gt; mégaoctets (par défaut : %u)</translation>
-    </message>
-    <message>
         <source>How thorough the block verification of -checkblocks is (0-4, default: %u)</source>
         <translation>Degré de profondeur de la vérification des blocs -checkblocks (0-4, par défaut : %u)</translation>
-    </message>
-    <message>
-        <source>Log transaction priority and fee per kB when mining blocks (default: %u)</source>
-        <translation>Lors du minage, journaliser la priorité des transactions et les frais par ko (par défaut : %u) </translation>
     </message>
     <message>
         <source>Maintain a full transaction index, used by the getrawtransaction rpc call (default: %u)</source>
@@ -3449,24 +3240,12 @@ par exemple : alertnotify=echo %%s | mail -s "Alerte Bitcoin" admin@foo.com
         <translation>(par défaut : %s)</translation>
     </message>
     <message>
-        <source>Acceptable ciphers (default: %s)</source>
-        <translation>Chiffrements acceptables (par défaut : %s)</translation>
-    </message>
-    <message>
         <source>Always query for peer addresses via DNS lookup (default: %u)</source>
         <translation>Toujours demander les adresses des pairs par recherche DNS (par défaut : %u)</translation>
     </message>
     <message>
-        <source>Disable safemode, override a real safe mode event (default: %u)</source>
-        <translation>Désactiver le mode sans échec, passer outre un événement sans échec réel (par défaut : %u)</translation>
-    </message>
-    <message>
         <source>Error loading wallet.dat</source>
         <translation>Erreur lors du chargement de wallet.dat</translation>
-    </message>
-    <message>
-        <source>Force safe mode (default: %u)</source>
-        <translation>Forcer le mode sans échec (par défaut : %u)</translation>
     </message>
     <message>
         <source>Generate coins (default: %u)</source>
@@ -3483,10 +3262,6 @@ par exemple : alertnotify=echo %%s | mail -s "Alerte Bitcoin" admin@foo.com
     <message>
         <source>Invalid -proxy address: '%s'</source>
         <translation>Adresse -proxy invalide : « %s »</translation>
-    </message>
-    <message>
-        <source>Limit size of signature cache to &lt;n&gt; entries (default: %u)</source>
-        <translation>Limiter la taille du cache des signatures à &lt;n&gt; entrées (par défaut : %u)</translation>
     </message>
     <message>
         <source>Listen for JSON-RPC connections on &lt;port&gt; (default: %u or testnet: %u)</source>
@@ -3513,10 +3288,6 @@ par exemple : alertnotify=echo %%s | mail -s "Alerte Bitcoin" admin@foo.com
         <translation>Tampon maximal d'envoi par connexion », &lt;n&gt;*1000 octets (par défaut : %u)</translation>
     </message>
     <message>
-        <source>Only accept block chain matching built-in checkpoints (default: %u)</source>
-        <translation>N'accepter qu'une chaîne de blocs correspondant aux points de vérification intégrés (par défaut : %u)</translation>
-    </message>
-    <message>
         <source>Prepend debug output with timestamp (default: %u)</source>
         <translation>Ajouter l'horodatage au début de la sortie de débogage (par défaut : %u)</translation>
     </message>
@@ -3529,20 +3300,12 @@ par exemple : alertnotify=echo %%s | mail -s "Alerte Bitcoin" admin@foo.com
         <translation>Relayer les multisignatures non-P2SH (par défaut : %u)</translation>
     </message>
     <message>
-        <source>Run a thread to flush wallet periodically (default: %u)</source>
-        <translation>Exécuter une tâche pour purger le portefeuille périodiquement (par défaut : %u) </translation>
-    </message>
-    <message>
         <source>Set key pool size to &lt;n&gt; (default: %u)</source>
         <translation>Définir la taille de la réserve de clefs à &lt;n&gt; (par défaut : %u)</translation>
     </message>
     <message>
         <source>Set minimum block size in bytes (default: %u)</source>
         <translation>Définir la taille de bloc minimale en octets (par défaut : %u)</translation>
-    </message>
-    <message>
-        <source>Sets the DB_PRIVATE flag in the wallet db environment (default: %u)</source>
-        <translation>Définit le drapeau DB_PRIVATE dans l'environnement de la BD du portefeuille (par défaut : %u)</translation>
     </message>
     <message>
         <source>Specify configuration file (default: %s)</source>
@@ -3559,10 +3322,6 @@ par exemple : alertnotify=echo %%s | mail -s "Alerte Bitcoin" admin@foo.com
     <message>
         <source>Spend unconfirmed change when sending transactions (default: %u)</source>
         <translation>Dépenser la monnaie non confirmée lors de l'envoi de transactions (par défaut : %u)</translation>
-    </message>
-    <message>
-        <source>Stop running after importing blocks from disk (default: %u)</source>
-        <translation>Cesser l'exécution après l'importation des blocs du disque (par défaut : %u)</translation>
     </message>
     <message>
         <source>Threshold for disconnecting misbehaving peers (default: %u)</source>

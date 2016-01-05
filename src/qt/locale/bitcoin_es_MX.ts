@@ -193,6 +193,9 @@
     </message>
 </context>
 <context>
+    <name>BanTableModel</name>
+    </context>
+<context>
     <name>BitcoinGUI</name>
     <message>
         <source>Sign &amp;message...</source>
@@ -673,10 +676,6 @@
         <translation>copiar cambio</translation>
     </message>
     <message>
-        <source>Total Amount %1 (= %2)</source>
-        <translation>Monto total %1(=%2)</translation>
-    </message>
-    <message>
         <source>or</source>
         <translation>o</translation>
     </message>
@@ -1061,22 +1060,6 @@
     <message>
         <source>Wallet options:</source>
         <translation>Opciones de cartera:</translation>
-    </message>
-    <message>
-        <source>Choose data directory on startup (default: 0)</source>
-        <translation>Escojer el directorio de información al iniciar (por defecto : 0)</translation>
-    </message>
-    <message>
-        <source>Set language, for example "de_DE" (default: system locale)</source>
-        <translation>Definir idioma, por ejemplo "de_DE" (por defecto: Sistema local)</translation>
-    </message>
-    <message>
-        <source>Show splash screen on startup (default: 1)</source>
-        <translation>Mostrar pantalla de arraque al iniciar (por defecto: 1)</translation>
-    </message>
-    <message>
-        <source>Start minimized</source>
-        <translation>Iniciar minimizado</translation>
     </message>
     <message>
         <source>Loading addresses...</source>

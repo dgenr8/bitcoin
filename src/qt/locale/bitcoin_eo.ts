@@ -2,6 +2,10 @@
 <context>
     <name>AddressBookPage</name>
     <message>
+        <source>Right-click to edit address or label</source>
+        <translation>Dekstre-klaku por redakti adreson aŭ etikedon</translation>
+    </message>
+    <message>
         <source>Create a new address</source>
         <translation>Krei novan adreson</translation>
     </message>
@@ -89,7 +93,11 @@
         <source>Exporting Failed</source>
         <translation>ekspotado malsukcesinta</translation>
     </message>
-    </context>
+    <message>
+        <source>There was an error trying to save the address list to %1. Please try again.</source>
+        <translation>Okazis eraron dum konservo de adreslisto al %1. Bonvolu provi denove.</translation>
+    </message>
+</context>
 <context>
     <name>AddressTableModel</name>
     <message>
@@ -200,6 +208,9 @@
         <translation>Vi sukcese ŝanĝis la pasfrazon de la monujo.</translation>
     </message>
 </context>
+<context>
+    <name>BanTableModel</name>
+    </context>
 <context>
     <name>BitcoinGUI</name>
     <message>
@@ -325,6 +336,10 @@
     <message>
         <source>&amp;Receive</source>
         <translation>&amp;Ricevi</translation>
+    </message>
+    <message>
+        <source>Show information about Bitcoin Core</source>
+        <translation>Vidigi informon pri Bitmona Kerno</translation>
     </message>
     <message>
         <source>&amp;Show / Hide</source>
@@ -477,6 +492,10 @@
         <translation>Krompago:</translation>
     </message>
     <message>
+        <source>Dust:</source>
+        <translation>Polvo:</translation>
+    </message>
+    <message>
         <source>After Fee:</source>
         <translation>Post krompago:</translation>
     </message>
@@ -499,6 +518,14 @@
     <message>
         <source>Amount</source>
         <translation>Sumo</translation>
+    </message>
+    <message>
+        <source>Received with label</source>
+        <translation>Ricevita kun etikedo</translation>
+    </message>
+    <message>
+        <source>Received with address</source>
+        <translation>Ricevita kun adreso</translation>
     </message>
     <message>
         <source>Date</source>
@@ -559,6 +586,10 @@
     <message>
         <source>Copy priority</source>
         <translation>Kopii prioritaton</translation>
+    </message>
+    <message>
+        <source>Copy dust</source>
+        <translation>Kopii polvon</translation>
     </message>
     <message>
         <source>Copy change</source>
@@ -833,6 +864,10 @@
     <message>
         <source>&amp;Network</source>
         <translation>&amp;Reto</translation>
+    </message>
+    <message>
+        <source>Expert</source>
+        <translation>Fakulo</translation>
     </message>
     <message>
         <source>Automatically open the Bitcoin client port on the router. This only works when your router supports UPnP and it is enabled.</source>
@@ -1353,6 +1388,10 @@
         <translation>Malplenigi ĉiujn kampojn de la formularo.</translation>
     </message>
     <message>
+        <source>Dust:</source>
+        <translation>Polvo:</translation>
+    </message>
+    <message>
         <source>Clear &amp;All</source>
         <translation>&amp;Forigi Ĉion</translation>
     </message>
@@ -1405,10 +1444,6 @@
         <translation>Kopii restmonon</translation>
     </message>
     <message>
-        <source>Total Amount %1 (= %2)</source>
-        <translation>Totala Sumo %1 (= %2)</translation>
-    </message>
-    <message>
         <source>or</source>
         <translation>aŭ</translation>
     </message>
@@ -1435,6 +1470,10 @@
     <message>
         <source>(no label)</source>
         <translation>(neniu etikedo)</translation>
+    </message>
+    <message>
+        <source>Copy dust</source>
+        <translation>Kopii polvon</translation>
     </message>
     <message>
         <source>Are you sure you want to send?</source>
@@ -2059,10 +2098,6 @@
         <translation>Ruli fone kiel demono kaj akcepti komandojn</translation>
     </message>
     <message>
-        <source>Use the test network</source>
-        <translation>Uzi la test-reton</translation>
-    </message>
-    <message>
         <source>Accept connections from outside (default: 1 if no -proxy or -connect)</source>
         <translation>Akcepti konektojn el ekstere (defaŭlte: 1 se ne estas -proxy nek -connect)</translation>
     </message>
@@ -2079,10 +2114,6 @@
         <translation>Tiu ĉi estas antaŭeldona testa versio - uzu laŭ via propra risko - ne uzu por minado aŭ por aplikaĵoj por vendistoj</translation>
     </message>
     <message>
-        <source>Warning: -paytxfee is set very high! This is the transaction fee you will pay if you send a transaction.</source>
-        <translation>Averto: -paytxfee estas agordita per tre alta valoro! Tio estas la krompago, kion vi pagos se vi sendas la transakcion.</translation>
-    </message>
-    <message>
         <source>Warning: The network does not appear to fully agree! Some miners appear to be experiencing issues.</source>
         <translation>Averto: La reto ne tute konsentas! Kelkaj minantoj ŝajne spertas problemojn aktuale.</translation>
     </message>
@@ -2091,20 +2122,12 @@
         <translation>Averto: ŝajne ni ne tute konsentas kun niaj samtavolanoj! Eble vi devas ĝisdatigi vian klienton, aŭ eble aliaj nodoj faru same.</translation>
     </message>
     <message>
-        <source>Warning: error reading wallet.dat! All keys read correctly, but transaction data or address book entries might be missing or incorrect.</source>
-        <translation>Averto: okazis eraro dum lego de wallet.dat! Ĉiuj ŝlosiloj sukcese legiĝis, sed la transakciaj datumoj aŭ la adresaro eble mankas aŭ malĝustas.</translation>
-    </message>
-    <message>
         <source>Warning: wallet.dat corrupt, data salvaged! Original wallet.dat saved as wallet.{timestamp}.bak in %s; if your balance or transactions are incorrect you should restore from a backup.</source>
         <translation>Averto: via wallet.dat estas difektita, sed la datumoj sukcese saviĝis! La originala wallet.dat estas nun konservita kiel wallet.{timestamp}.bak en %s; se via saldo aŭ transakcioj estas malĝustaj vi devus restaŭri per alia sekurkopio.</translation>
     </message>
     <message>
         <source>&lt;category&gt; can be:</source>
         <translation>&lt;category&gt; povas esti:</translation>
-    </message>
-    <message>
-        <source>Attempt to recover private keys from a corrupt wallet.dat</source>
-        <translation>Provo ripari privatajn ŝlosilojn el difektita wallet.dat</translation>
     </message>
     <message>
         <source>Block creation options:</source>
@@ -2183,16 +2206,8 @@
         <translation>Vi devas rekontrui la datumbazon kun -reindex por ŝanĝi -txindex</translation>
     </message>
     <message>
-        <source>Imports blocks from external blk000??.dat file</source>
-        <translation>Importas blokojn el ekstera dosiero blk000??.dat</translation>
-    </message>
-    <message>
         <source>Execute command when a relevant alert is received or we see a really long fork (%s in cmd is replaced by message)</source>
         <translation>Plenumi komandon kiam rilata alerto riceviĝas, aŭ kiam ni vidas tre longan forkon (%s en cms anstataŭiĝas per mesaĝo)</translation>
-    </message>
-    <message>
-        <source>Choose data directory on startup (default: 0)</source>
-        <translation>Elekti dosierujon por datumoj dum lanĉo (defaŭlte: 0)</translation>
     </message>
     <message>
         <source>Information</source>
@@ -2211,24 +2226,12 @@
         <translation>Sendi spurajn/sencimigajn informojn al la konzolo anstataŭ al dosiero debug.log</translation>
     </message>
     <message>
-        <source>Set language, for example "de_DE" (default: system locale)</source>
-        <translation>Agordi lingvon, ekzemple "de_DE" (defaŭlte: tiu de la sistemo)</translation>
-    </message>
-    <message>
-        <source>Show splash screen on startup (default: 1)</source>
-        <translation>Montri salutŝildon dum lanĉo (defaŭlte: 1)</translation>
-    </message>
-    <message>
         <source>Shrink debug.log file on client startup (default: 1 when no -debug)</source>
         <translation>Malpligrandigi la sencimigan protokol-dosieron kiam kliento lanĉiĝas (defaŭlte: 1 kiam mankas -debug)</translation>
     </message>
     <message>
         <source>Signing transaction failed</source>
         <translation>Subskriba transakcio fiaskis</translation>
-    </message>
-    <message>
-        <source>Start minimized</source>
-        <translation>Lanĉiĝi plejete</translation>
     </message>
     <message>
         <source>This is experimental software.</source>
@@ -2245,10 +2248,6 @@
     <message>
         <source>Transaction too large</source>
         <translation>Transakcio estas tro granda</translation>
-    </message>
-    <message>
-        <source>Use UPnP to map the listening port (default: 1 when listening)</source>
-        <translation>Uzi UPnP por mapi la aŭskultan pordon (defaŭlte: 1 dum aŭskultado)</translation>
     </message>
     <message>
         <source>Username for JSON-RPC connections</source>
@@ -2269,18 +2268,6 @@
     <message>
         <source>Execute command when the best block changes (%s in cmd is replaced by block hash)</source>
         <translation>Plenumi komandon kiam plej bona bloko ŝanĝiĝas (%s en cmd anstataŭiĝas per bloka haketaĵo)</translation>
-    </message>
-    <message>
-        <source>Upgrade wallet to latest format</source>
-        <translation>Ĝisdatigi monujon al plej lasta formato</translation>
-    </message>
-    <message>
-        <source>Rescan the block chain for missing wallet transactions</source>
-        <translation>Reskani la blokĉenon por mankantaj monujaj transakcioj</translation>
-    </message>
-    <message>
-        <source>Use OpenSSL (https) for JSON-RPC connections</source>
-        <translation>Uzi OpenSSL (https) por konektoj JSON-RPC</translation>
     </message>
     <message>
         <source>This help message</source>

@@ -165,6 +165,9 @@
     </message>
 </context>
 <context>
+    <name>BanTableModel</name>
+    </context>
+<context>
     <name>BitcoinGUI</name>
     <message>
         <source>Sign &amp;message...</source>
@@ -204,7 +207,7 @@
     </message>
     <message>
         <source>Show information about Qt</source>
-        <translation>Mostrar Información sobre QT</translation>
+        <translation>Mostrar Información sobre Qt</translation>
     </message>
     <message>
         <source>&amp;Options...</source>
@@ -1289,15 +1292,6 @@
 </translation>
     </message>
     <message>
-        <source>Use the test network</source>
-        <translation>Usa la red de pruebas
-</translation>
-    </message>
-    <message>
-        <source>Warning: -paytxfee is set very high! This is the transaction fee you will pay if you send a transaction.</source>
-        <translation>Precaución: -paytxfee es muy alta. Esta es la comisión que pagarás si envias una transacción.</translation>
-    </message>
-    <message>
         <source>Connect only to the specified node(s)</source>
         <translation>Conecta solo al nodo especificado
 </translation>
@@ -1311,25 +1305,12 @@
         <translation>Atención: Poco espacio en el disco duro</translation>
     </message>
     <message>
-        <source>Imports blocks from external blk000??.dat file</source>
-        <translation>Importar bloques desde el archivo externo blk000??.dat </translation>
-    </message>
-    <message>
         <source>Information</source>
         <translation>Información</translation>
     </message>
     <message>
         <source>Send trace/debug info to console instead of debug.log file</source>
         <translation>Enviar informacion de seguimiento a la consola en vez del archivo debug.log</translation>
-    </message>
-    <message>
-        <source>Start minimized</source>
-        <translation>Arranca minimizado
-</translation>
-    </message>
-    <message>
-        <source>Use UPnP to map the listening port (default: 1 when listening)</source>
-        <translation>Intenta usar UPnP para mapear el puerto de escucha (default: 1 when listening)</translation>
     </message>
     <message>
         <source>Username for JSON-RPC connections</source>
@@ -1347,20 +1328,6 @@
     <message>
         <source>Password for JSON-RPC connections</source>
         <translation>Contraseña para las conexiones JSON-RPC
-</translation>
-    </message>
-    <message>
-        <source>Upgrade wallet to latest format</source>
-        <translation>Actualizar billetera al formato actual</translation>
-    </message>
-    <message>
-        <source>Rescan the block chain for missing wallet transactions</source>
-        <translation>Rescanea la cadena de bloques para transacciones perdidas de la cartera
-</translation>
-    </message>
-    <message>
-        <source>Use OpenSSL (https) for JSON-RPC connections</source>
-        <translation>Usa OpenSSL (https) para las conexiones JSON-RPC
 </translation>
     </message>
     <message>
@@ -1390,6 +1357,14 @@
         <translation>Dirección -proxy invalida: '%s'</translation>
     </message>
     <message>
+        <source>Cannot resolve -bind address: '%s'</source>
+        <translation>No se pudo resolver la dirección fija: '%s'</translation>
+    </message>
+    <message>
+        <source>Cannot resolve -externalip address: '%s'</source>
+        <translation>No se pudo resolver la dirección ip: '%s'</translation>
+    </message>
+    <message>
         <source>Invalid amount for -paytxfee=&lt;amount&gt;: '%s'</source>
         <translation>Cantidad inválida para -paytxfee=&lt;amount&gt;: '%s'</translation>
     </message>
@@ -1408,6 +1383,14 @@
     <message>
         <source>Loading wallet...</source>
         <translation>Cargando cartera...</translation>
+    </message>
+    <message>
+        <source>Cannot downgrade wallet</source>
+        <translation>No es posible desactualizar la billetera</translation>
+    </message>
+    <message>
+        <source>Cannot write default address</source>
+        <translation>No se pudo escribir la dirección por defecto</translation>
     </message>
     <message>
         <source>Rescanning...</source>

@@ -2,6 +2,10 @@
 <context>
     <name>AddressBookPage</name>
     <message>
+        <source>Right-click to edit address or label</source>
+        <translation>Spustelėkite dešinįjį klaviša norint keisti adresą arba etiketę</translation>
+    </message>
+    <message>
         <source>Create a new address</source>
         <translation>Sukurti naują adresą</translation>
     </message>
@@ -26,12 +30,20 @@
         <translation>&amp;Kopijuoti adresą</translation>
     </message>
     <message>
+        <source>Delete the currently selected address from the list</source>
+        <translation>Ištrinti pasirinktą adresą iš sąrašo</translation>
+    </message>
+    <message>
         <source>&amp;Export</source>
         <translation>&amp;Eksportuoti</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
         <translation>&amp;Trinti</translation>
+    </message>
+    <message>
+        <source>Choose the address to send coins to</source>
+        <translation>Pasirinkite adresą kuriam siūsite monetas</translation>
     </message>
     <message>
         <source>C&amp;hoose</source>
@@ -177,6 +189,9 @@
     </message>
 </context>
 <context>
+    <name>BanTableModel</name>
+    </context>
+<context>
     <name>BitcoinGUI</name>
     <message>
         <source>Sign &amp;message...</source>
@@ -245,6 +260,10 @@
     <message>
         <source>&amp;Receiving addresses...</source>
         <translation>&amp;Gaunami adresai...</translation>
+    </message>
+    <message>
+        <source>Open &amp;URI...</source>
+        <translation>Atidaryti &amp;URI...</translation>
     </message>
     <message>
         <source>Bitcoin Core client</source>
@@ -384,6 +403,10 @@
 </context>
 <context>
     <name>CoinControlDialog</name>
+    <message>
+        <source>Coin Selection</source>
+        <translation>Monetų pasirinkimas</translation>
+    </message>
     <message>
         <source>Quantity:</source>
         <translation>Kiekis:</translation>
@@ -715,6 +738,10 @@
         <translation>niekas</translation>
     </message>
     <message>
+        <source>Confirm options reset</source>
+        <translation>Patvirtinti nustatymų atstatymą</translation>
+    </message>
+    <message>
         <source>The supplied proxy address is invalid.</source>
         <translation>Nurodytas tarpinio serverio adresas negalioja.</translation>
     </message>
@@ -724,6 +751,14 @@
     <message>
         <source>Form</source>
         <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Available:</source>
+        <translation>Galimi:</translation>
+    </message>
+    <message>
+        <source>Pending:</source>
+        <translation>Laukiantys:</translation>
     </message>
     <message>
         <source>Immature:</source>
@@ -743,6 +778,10 @@
     <message>
         <source>URI handling</source>
         <translation>URI apdorojimas</translation>
+    </message>
+    <message>
+        <source>Payment request rejected</source>
+        <translation>Mokėjimo siuntimas atmestas</translation>
     </message>
     <message>
         <source>Network request error</source>
@@ -821,6 +860,18 @@
         <translation>Dabartinis blokų skaičius</translation>
     </message>
     <message>
+        <source>Received</source>
+        <translation>Gauta</translation>
+    </message>
+    <message>
+        <source>Direction</source>
+        <translation>Kryptis</translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation>Versija</translation>
+    </message>
+    <message>
         <source>Last block time</source>
         <translation>Paskutinio bloko laikas</translation>
     </message>
@@ -864,12 +915,20 @@
         <source>%1 GB</source>
         <translation>%1 GB</translation>
     </message>
+    <message>
+        <source>never</source>
+        <translation>Niekada</translation>
+    </message>
     </context>
 <context>
     <name>ReceiveCoinsDialog</name>
     <message>
         <source>&amp;Label:</source>
         <translation>Ž&amp;ymė:</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Išvalyti</translation>
     </message>
     <message>
         <source>Copy label</source>
@@ -1551,14 +1610,6 @@
         <translation>Dirbti fone kaip šešėlyje ir priimti komandas</translation>
     </message>
     <message>
-        <source>Use the test network</source>
-        <translation>Naudoti testavimo tinklą</translation>
-    </message>
-    <message>
-        <source>Warning: -paytxfee is set very high! This is the transaction fee you will pay if you send a transaction.</source>
-        <translation>Įspėjimas: -paytxfee yra nustatytas per didelis. Tai sandorio mokestis, kurį turėsite mokėti, jei siųsite sandorį.</translation>
-    </message>
-    <message>
         <source>Connect only to the specified node(s)</source>
         <translation>Prisijungti tik prie nurodyto mazgo</translation>
     </message>
@@ -1583,18 +1634,6 @@
         <translation>Siųsti atsekimo/derinimo info į konsolę vietoj debug.log failo</translation>
     </message>
     <message>
-        <source>Set language, for example "de_DE" (default: system locale)</source>
-        <translation>Nustatyti kalbą, pavyzdžiui "lt_LT" (numatyta: sistemos kalba)</translation>
-    </message>
-    <message>
-        <source>Start minimized</source>
-        <translation>Paleisti sumažintą</translation>
-    </message>
-    <message>
-        <source>Use UPnP to map the listening port (default: 1 when listening)</source>
-        <translation>Bandymas naudoti UPnP struktūra klausymosi prievadui (default: 1 when listening)</translation>
-    </message>
-    <message>
         <source>Username for JSON-RPC connections</source>
         <translation>Vartotojo vardas JSON-RPC jungimuisi</translation>
     </message>
@@ -1605,18 +1644,6 @@
     <message>
         <source>Password for JSON-RPC connections</source>
         <translation>Slaptažodis JSON-RPC sujungimams</translation>
-    </message>
-    <message>
-        <source>Upgrade wallet to latest format</source>
-        <translation>Atnaujinti piniginę į naujausią formatą</translation>
-    </message>
-    <message>
-        <source>Rescan the block chain for missing wallet transactions</source>
-        <translation>Ieškoti  prarastų piniginės sandorių blokų grandinėje</translation>
-    </message>
-    <message>
-        <source>Use OpenSSL (https) for JSON-RPC connections</source>
-        <translation>Naudoti OpenSSL (https) jungimuisi JSON-RPC </translation>
     </message>
     <message>
         <source>This help message</source>

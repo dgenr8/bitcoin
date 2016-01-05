@@ -22,7 +22,7 @@ except ImportError:
 
 class HTTPBasicsTest (BitcoinTestFramework):
     def setup_nodes(self):
-        return start_nodes(4, self.options.tmpdir, extra_args=[['-rpckeepalive=1'], ['-rpckeepalive=0'], [], []])
+        return start_nodes(4, self.options.tmpdir)
 
     def run_test(self):
 
@@ -84,9 +84,8 @@ class HTTPBasicsTest (BitcoinTestFramework):
         conn.request('POST', '/', '{"method": "getbestblockhash"}', headers)
         out1 = conn.getresponse().read();
         assert_equal('"error":null' in out1, True)
-        assert_equal(conn.sock!=None, False) #connection must be closed because keep-alive was set to false
 
-        #node2 (third node) is running with standard keep-alive parameters which means keep-alive is off
+        #node2 (third node) is running with standard keep-alive parameters which means keep-alive is on
         urlNode2 = urlparse.urlparse(self.nodes[2].url)
         authpair = urlNode2.username + ':' + urlNode2.password
         headers = {"Authorization": "Basic " + base64.b64encode(authpair)}
@@ -97,6 +96,20 @@ class HTTPBasicsTest (BitcoinTestFramework):
         out1 = conn.getresponse().read();
         assert_equal('"error":null' in out1, True)
         assert_equal(conn.sock!=None, True) #connection must be closed because bitcoind should use keep-alive by default
+
+        # Check excessive request size
+        conn = httplib.HTTPConnection(urlNode2.hostname, urlNode2.port)
+        conn.connect()
+        conn.request('GET', '/' + ('x'*1000), '', headers)
+        out1 = conn.getresponse()
+        assert_equal(out1.status, httplib.NOT_FOUND)
+
+        conn = httplib.HTTPConnection(urlNode2.hostname, urlNode2.port)
+        conn.connect()
+        conn.request('GET', '/' + ('x'*10000), '', headers)
+        out1 = conn.getresponse()
+        assert_equal(out1.status, httplib.BAD_REQUEST)
+
 
 if __name__ == '__main__':
     HTTPBasicsTest ().main ()

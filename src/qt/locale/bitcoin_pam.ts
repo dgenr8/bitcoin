@@ -2,6 +2,10 @@
 <context>
     <name>AddressBookPage</name>
     <message>
+        <source>Right-click to edit address or label</source>
+        <translation>I-right click ban alilan ing address o libel</translation>
+    </message>
+    <message>
         <source>Create a new address</source>
         <translation>Maglalang kang bayung address</translation>
     </message>
@@ -184,6 +188,9 @@
         <translation>Mi-alilan ne ing passphrase na ning wallet.</translation>
     </message>
 </context>
+<context>
+    <name>BanTableModel</name>
+    </context>
 <context>
     <name>BitcoinGUI</name>
     <message>
@@ -1323,16 +1330,8 @@
         <translation>Gumana king gulut bilang daemon at tumanggap commands</translation>
     </message>
     <message>
-        <source>Use the test network</source>
-        <translation>Gamitan ing test network</translation>
-    </message>
-    <message>
         <source>Accept connections from outside (default: 1 if no -proxy or -connect)</source>
         <translation>Tumanggap koneksion menibat king kilwal (default: 1 if no -proxy or -connect)</translation>
-    </message>
-    <message>
-        <source>Warning: -paytxfee is set very high! This is the transaction fee you will pay if you send a transaction.</source>
-        <translation>Kapabaluan: Sobra ya katas ing makalage king -paytxfee. Ini ing maging bayad mu para king bayad na ning transaksion istung pepadala me ing transaksion a ini.</translation>
     </message>
     <message>
         <source>Block creation options:</source>
@@ -1375,18 +1374,6 @@
         <translation>Magpadalang trace/debug info okeng console kesa keng debug.log file</translation>
     </message>
     <message>
-        <source>Set language, for example "de_DE" (default: system locale)</source>
-        <translation>Mamiling Amanu, alimbawa "de_DE"(default: system locale)</translation>
-    </message>
-    <message>
-        <source>Show splash screen on startup (default: 1)</source>
-        <translation>Ipalto ing splash screen keng umpisa (default: 1)</translation>
-    </message>
-    <message>
-        <source>Start minimized</source>
-        <translation>Umpisan ing pamaglati</translation>
-    </message>
-    <message>
         <source>Transaction too large</source>
         <translation>Maragul yang masiadu ing transaksion</translation>
     </message>
@@ -1405,18 +1392,6 @@
     <message>
         <source>Execute command when the best block changes (%s in cmd is replaced by block hash)</source>
         <translation>I-execute ing command istung mialilan ya ing best block (%s in cmd is replaced by block hash)</translation>
-    </message>
-    <message>
-        <source>Upgrade wallet to latest format</source>
-        <translation>I-upgrade ing wallet king pekabayung porma</translation>
-    </message>
-    <message>
-        <source>Rescan the block chain for missing wallet transactions</source>
-        <translation>I-scan pasibayu ing block chain para kareng mauaualang transaksion</translation>
-    </message>
-    <message>
-        <source>Use OpenSSL (https) for JSON-RPC connections</source>
-        <translation>Gumamit OpenSSL(https) para king JSON-RPC koneksion</translation>
     </message>
     <message>
         <source>This help message</source>

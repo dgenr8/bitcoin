@@ -101,6 +101,9 @@
     </message>
     </context>
 <context>
+    <name>BanTableModel</name>
+    </context>
+<context>
     <name>BitcoinGUI</name>
     <message>
         <source>Synchronizing with network...</source>
@@ -629,10 +632,6 @@
     <message>
         <source>Options:</source>
         <translation>Opsies:</translation>
-    </message>
-    <message>
-        <source>Use the test network</source>
-        <translation>Gebruik die toets netwerk</translation>
     </message>
     <message>
         <source>Error: Disk space is low!</source>
