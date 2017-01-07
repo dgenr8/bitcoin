@@ -62,8 +62,8 @@ static const unsigned int DEFAULT_DESCENDANT_LIMIT = 25;
 static const unsigned int DEFAULT_DESCENDANT_SIZE_LIMIT = 101;
 /** Default for -mempoolexpiry, expiration time for mempool transactions in hours */
 static const unsigned int DEFAULT_MEMPOOL_EXPIRY = 72;
-/** The maximum size of a blk?????.dat file (since 0.8) */
-static const unsigned int MAX_BLOCKFILE_SIZE = 0x8000000; // 128 MiB
+/** Minimum number of max-sized blocks in blk?????.dat files */
+static const unsigned int MIN_BLOCKFILE_BLOCKS = 128;
 /** The pre-allocation chunk size for blk?????.dat files (since 0.8) */
 static const unsigned int BLOCKFILE_CHUNK_SIZE = 0x1000000; // 16 MiB
 /** The pre-allocation chunk size for rev?????.dat files (since 0.8) */
@@ -119,8 +119,6 @@ static const bool DEFAULT_ENABLE_REPLACEMENT = true;
 
 /** Maximum number of headers to announce when relaying blocks with headers message.*/
 static const unsigned int MAX_BLOCKS_TO_ANNOUNCE = 8;
-/** Maximum length of incoming protocol messages (no message over 2 MiB is currently acceptable). */
-static const unsigned int MAX_PROTOCOL_MESSAGE_LENGTH = 2 * 1024 * 1024;
 
 struct BlockHasher
 {
@@ -211,7 +209,7 @@ bool LoadExternalBlockFile(const CChainParams& chainparams, FILE* fileIn, CDiskB
 /** Initialize a new block tree database + block data on disk */
 bool InitBlockIndex(const CChainParams& chainparams);
 /** Load the block tree and coins database from disk */
-bool LoadBlockIndex();
+bool LoadBlockIndex(bool* fRebuildRequired);
 /** Unload database information */
 void UnloadBlockIndex();
 /** Process protocol messages received from a given node */

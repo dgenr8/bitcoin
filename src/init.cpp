@@ -493,7 +493,8 @@ std::string HelpMessage(HelpMessageMode mode)
 
     strUsage += HelpMessageGroup(_("Block creation options:"));
     strUsage += HelpMessageOpt("-blockminsize=<n>", strprintf(_("Set minimum block size in bytes (default: %u)"), DEFAULT_BLOCK_MIN_SIZE));
-    strUsage += HelpMessageOpt("-blockmaxsize=<n>", strprintf(_("Set maximum block size in bytes (default: %d)"), DEFAULT_BLOCK_MAX_SIZE));
+    strUsage += HelpMessageOpt("-blockmaxsize=<n>", _("Set maximum block size in bytes (default: network sizelimit)"));
+    strUsage += HelpMessageOpt("-maxblocksizevote=<n>", _("Set vote for maximum block size in megabytes (default: network sizelimit)"));
     strUsage += HelpMessageOpt("-blockprioritysize=<n>", strprintf(_("Set maximum size of high-priority/low-fee transactions in bytes (default: %d)"), DEFAULT_BLOCK_PRIORITY_SIZE));
     if (showDebug)
         strUsage += HelpMessageOpt("-blockversion=<n>", "Override block version to test forking scenarios");
@@ -1022,6 +1023,10 @@ bool AppInit2(boost::thread_group& threadGroup, CScheduler& scheduler)
 
     fAlerts = GetBoolArg("-alerts", DEFAULT_ALERTS);
 
+    uint64_t nMaxBlockSizeVote = GetArg("-maxblocksizevote", 0);
+    if (nMaxBlockSizeVote > 999)
+        InitWarning(_("Warning: Max block size vote is very large. Units are megabytes.\n"));
+
     // Option to startup with mocktime set (used for regression testing):
     SetMockTime(GetArg("-mocktime", 0)); // SetMockTime(0) is a no-op
 
@@ -1335,8 +1340,11 @@ bool AppInit2(boost::thread_group& threadGroup, CScheduler& scheduler)
                         CleanupBlockRevFiles();
                 }
 
-                if (!LoadBlockIndex()) {
+                bool fRebuildRequired = false;
+                if (!LoadBlockIndex(&fRebuildRequired)) {
                     strLoadError = _("Error loading block database");
+                    if (fRebuildRequired)
+                        strLoadError += _(". You need to rebuild the database using -reindex.");
                     break;
                 }
 
