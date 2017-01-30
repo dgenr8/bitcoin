@@ -388,4 +388,27 @@ BOOST_AUTO_TEST_CASE(CreateNewBlock_validity)
     fCheckpointsEnabled = true;
 }
 
+std::string DefaultCoinbaseStr() {
+    const CChainParams& chainparams = Params(CBaseChainParams::MAIN);
+    CScript scriptPubKey = CScript() << ParseHex("04678afdb0fe5548271967f1a67130b7105cd6a828e03909a67962e0ea1f61deb649f6bc3f4cef38c4f35504e51ec112de5c384df7ba0b8d578a4c702b6bf11d5f") << OP_CHECKSIG;
+    std::auto_ptr<CBlockTemplate> tpl(CreateNewBlock(chainparams, scriptPubKey));
+    CScript coinbase = tpl->block.vtx.at(0).vin.at(0).scriptSig;
+    return std::string(coinbase.begin(), coinbase.end());
+}
+
+BOOST_AUTO_TEST_CASE(CreateNewBlock_bip100str)
+{
+    LOCK(cs_main);
+
+    // No vote defined. Should only contain EB.
+    std::string c = DefaultCoinbaseStr();
+    BOOST_CHECK(c.find("/BIP100/EB1/") != std::string::npos);
+    BOOST_CHECK(c.find("/B1/") == std::string::npos);
+
+    // Vote for 16MB blocks
+    SoftSetArg("-maxblocksizevote", "16");
+    c = DefaultCoinbaseStr();
+    BOOST_CHECK(c.find("/BIP100/B16/EB1/") != std::string::npos);
+}
+
 BOOST_AUTO_TEST_SUITE_END()
