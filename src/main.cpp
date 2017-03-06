@@ -303,6 +303,12 @@ int GetHeight()
     return chainActive.Height();
 }
 
+int GetMaxBlockSize()
+{
+    LOCK(cs_main);
+    return chainActive.Tip()->nMaxBlockSize;
+}
+
 void UpdatePreferredDownload(CNode* node, CNodeState* state)
 {
     nPreferredDownload -= state->fPreferredDownload;
@@ -572,6 +578,7 @@ void RegisterNodeSignals(CNodeSignals& nodeSignals)
     nodeSignals.SendMessages.connect(&SendMessages);
     nodeSignals.InitializeNode.connect(&InitializeNode);
     nodeSignals.FinalizeNode.connect(&FinalizeNode);
+    nodeSignals.GetMaxBlockSize.connect(&GetMaxBlockSize);
 }
 
 void UnregisterNodeSignals(CNodeSignals& nodeSignals)
@@ -582,6 +589,7 @@ void UnregisterNodeSignals(CNodeSignals& nodeSignals)
     nodeSignals.SendMessages.disconnect(&SendMessages);
     nodeSignals.InitializeNode.disconnect(&InitializeNode);
     nodeSignals.FinalizeNode.disconnect(&FinalizeNode);
+    nodeSignals.GetMaxBlockSize.disconnect(&GetMaxBlockSize);
 }
 
 CBlockIndex* FindForkInGlobalIndex(const CChain& chain, const CBlockLocator& locator)
@@ -4000,7 +4008,7 @@ bool LoadBlockIndex(bool* fRebuildRequired)
     return true;
 }
 
-bool InitBlockIndex(const CChainParams& chainparams) 
+bool InitBlockIndex(const CChainParams& chainparams)
 {
     LOCK(cs_main);
 
