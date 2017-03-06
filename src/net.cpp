@@ -84,7 +84,7 @@ static std::vector<ListenSocket> vhListenSocket;
 CAddrMan addrman;
 int nMaxConnections = DEFAULT_MAX_PEER_CONNECTIONS;
 bool fAddressesInitialized = false;
-std::string strSubVersion;
+std::vector<std::string> vUAComments;
 
 vector<CNode*> vNodes;
 CCriticalSection cs_vNodes;
@@ -442,6 +442,7 @@ void CNode::CloseSocketDisconnect()
 void CNode::PushVersion()
 {
     int nBestHeight = g_signals.GetHeight().get_value_or(0);
+    int nMaxBlockSize = g_signals.GetMaxBlockSize().get_value_or(0);
 
     int64_t nTime = (fInbound ? GetAdjustedTime() : GetTime());
     CAddress addrYou = (addr.IsRoutable() && !IsProxy(addr) ? addr : CAddress(CService("0.0.0.0",0)));
@@ -451,6 +452,7 @@ void CNode::PushVersion()
         LogPrint("net", "send version message: version %d, blocks=%d, us=%s, them=%s, peer=%d\n", PROTOCOL_VERSION, nBestHeight, addrMe.ToString(), addrYou.ToString(), id);
     else
         LogPrint("net", "send version message: version %d, blocks=%d, us=%s, peer=%d\n", PROTOCOL_VERSION, nBestHeight, addrMe.ToString(), id);
+    std::string strSubVersion = FormatSubVersion(CLIENT_NAME, CLIENT_VERSION, vUAComments, nMaxBlockSize);
     PushMessage(NetMsgType::VERSION, PROTOCOL_VERSION, nLocalServices, nTime, addrYou, addrMe,
                 nLocalHostNonce, strSubVersion, nBestHeight, !GetBoolArg("-blocksonly", DEFAULT_BLOCKSONLY));
 }
@@ -2580,14 +2582,14 @@ bool CBanDB::Read(banmap_t& banSet)
         // ... verify the network matches ours
         if (memcmp(pchMsgTmp, Params().MessageStart(), sizeof(pchMsgTmp)))
             return error("%s: Invalid network magic number", __func__);
-        
+
         // de-serialize address data into one CAddrMan object
         ssBanlist >> banSet;
     }
     catch (const std::exception& e) {
         return error("%s: Deserialize or I/O error - %s", __func__, e.what());
     }
-    
+
     return true;
 }
 

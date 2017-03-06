@@ -119,6 +119,7 @@ struct CNodeSignals
     boost::signals2::signal<bool (CNode*), CombinerAll> SendMessages;
     boost::signals2::signal<void (NodeId, const CNode*)> InitializeNode;
     boost::signals2::signal<void (NodeId)> FinalizeNode;
+    boost::signals2::signal<int ()> GetMaxBlockSize;
 };
 
 
@@ -174,8 +175,8 @@ extern CCriticalSection cs_vAddedNodes;
 extern NodeId nLastNodeId;
 extern CCriticalSection cs_nLastNodeId;
 
-/** Subversion as sent to the P2P network in `version` messages */
-extern std::string strSubVersion;
+/** Comments in subversion sent to the P2P network in `version` messages */
+extern std::vector<std::string> vUAComments;
 
 struct LocalServiceInfo {
     int nScore;
