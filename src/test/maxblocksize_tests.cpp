@@ -155,8 +155,7 @@ BOOST_AUTO_TEST_CASE(get_max_blocksize_vote_eb) {
 
 BOOST_AUTO_TEST_CASE(get_max_blocksize_vote_no_vote) {
     int32_t height = 600000;
-    CScript coinbase = CScript() << height << OP_0;
-    BOOST_CHECK_EQUAL(0, GetMaxBlockSizeVote(coinbase, height));
+    BOOST_CHECK_EQUAL(0, GetMaxBlockSizeVote(CScript() << height << OP_0, height));
 
     // votes must begin and end with /
     BOOST_CHECK_EQUAL(0, GetMaxBlockSizeVote(CScript() << height << to_uchar("/EB2"), height));
@@ -186,6 +185,15 @@ BOOST_AUTO_TEST_CASE(get_max_blocksize_vote_no_vote) {
     BOOST_CHECK_EQUAL(0, GetMaxBlockSizeVote(CScript() << to_uchar("/B2/"), height));
 
     BOOST_CHECK_EQUAL(0, GetMaxBlockSizeVote(CScript() << to_uchar("/BIP100/B/B8/"), height));
+
+    // Test that height is not a part of the vote string.
+    // Encoded height in this test ends with /.
+    // Should not be interpreted as /BIP100/B8/
+    CScript coinbase = CScript() << 47;
+    BOOST_CHECK_EQUAL('/', coinbase.back());
+    std::vector<unsigned char> vote = to_uchar("BIP100/B8/");
+    coinbase.insert(coinbase.end(), vote.begin(), vote.end()); // insert instead of << to avoid size being prepended
+    BOOST_CHECK_EQUAL(0, GetMaxBlockSizeVote(coinbase, 47));
 }
 
 BOOST_AUTO_TEST_SUITE_END();

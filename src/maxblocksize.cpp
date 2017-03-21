@@ -65,10 +65,11 @@ static uint32_t FindVote(const std::string& coinbase) {
     uint32_t eb_vote = 0;
     std::vector<char> curr;
     bool bip100vote = false;
+    bool started = false;
 
     BOOST_FOREACH (char s, coinbase) {
-
         if (s == '/') {
+            started = true;
             // End (or beginning) of a potential vote string.
 
             if (curr.size() < 2) // Minimum vote string length is 2
@@ -111,8 +112,10 @@ static uint32_t FindVote(const std::string& coinbase) {
             curr.clear();
             continue;
         }
-
-        curr.push_back(s);
+        else if (!started)
+            continue;
+        else
+            curr.push_back(s);
     }
     return eb_vote;
 }
