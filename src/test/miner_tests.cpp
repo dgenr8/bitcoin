@@ -401,6 +401,7 @@ BOOST_AUTO_TEST_CASE(CreateNewBlock_bip100str)
     LOCK(cs_main);
 
     // No vote defined. Should only contain EB.
+    mapArgs.erase("-maxblocksizevote");
     std::string c = DefaultCoinbaseStr();
     BOOST_CHECK(c.find("/BIP100/EB1/") != std::string::npos);
     BOOST_CHECK(c.find("/B1/") == std::string::npos);

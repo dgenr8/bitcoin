@@ -77,7 +77,7 @@ int64_t UpdateTime(CBlockHeader* pblock, const Consensus::Params& consensusParam
 // BIP100 string:
 // - Adds our block size vote (B) if configured.
 // - Adds Excessive Block (EB) string. This announces how big blocks we currently accept.
-static std::vector<unsigned char> BIP100Str(uint64_t hardLimit) {
+std::vector<unsigned char> BIP100Str(uint64_t hardLimit) {
     uint64_t blockVote = GetArg("-maxblocksizevote", 0);
 
     std::stringstream ss;
