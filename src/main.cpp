@@ -2262,7 +2262,10 @@ bool ConnectBlock(const CBlock& block, CValidationState& state, CBlockIndex* pin
     LogPrint("bench", "    - Sanity checks: %.2fms [%.2fs]\n", 0.001 * (nTime1 - nTimeStart), nTimeCheck * 0.000001);
 
     // Block size limit (BIP100)
-    if (block.vtx.size() > pindex->nMaxBlockSize || ::GetSerializeSize(block, SER_NETWORK, PROTOCOL_VERSION) > pindex->nMaxBlockSize)
+    if (block.vtx.size() > pindex->nMaxBlockSize)
+        return state.DoS(100, error("%s: size limits failed", __func__), REJECT_INVALID, "bad-vtx-length");
+    uint64_t nBlockSize = ::GetSerializeSize(block, SER_NETWORK, PROTOCOL_VERSION);
+    if (nBlockSize > pindex->nMaxBlockSize)
         return state.DoS(100, error("%s: size limits failed", __func__), REJECT_INVALID, "bad-blk-length");
 
     // Do not allow blocks that contain transactions which 'overwrite' older transactions,
@@ -2346,7 +2349,7 @@ bool ConnectBlock(const CBlock& block, CValidationState& state, CBlockIndex* pin
 
         nInputs += tx.vin.size();
         nSigOps += GetLegacySigOpCount(tx);
-        if (nSigOps > MaxBlockSigops(pindex->nMaxBlockSize))
+        if (nSigOps > MaxBlockSigops(nBlockSize))
             return state.DoS(100, error("ConnectBlock(): too many sigops"),
                              REJECT_INVALID, "bad-blk-sigops");
 
@@ -2375,7 +2378,7 @@ bool ConnectBlock(const CBlock& block, CValidationState& state, CBlockIndex* pin
                 // this is to prevent a "rogue miner" from creating
                 // an incredibly-expensive-to-validate block.
                 nSigOps += GetP2SHSigOpCount(tx, view);
-                if (nSigOps > MaxBlockSigops(pindex->nMaxBlockSize))
+                if (nSigOps > MaxBlockSigops(nBlockSize))
                     return state.DoS(100, error("ConnectBlock(): too many sigops"),
                                      REJECT_INVALID, "bad-blk-sigops");
             }
@@ -3293,6 +3296,14 @@ bool CheckBlock(const CBlock& block, CValidationState& state, bool fCheckPOW, bo
 
     if (fCheckPOW && fCheckMerkleRoot)
         block.fChecked = true;
+
+    unsigned int nSigOps = 0;
+    BOOST_FOREACH(const CTransaction& tx, block.vtx)
+    {
+        nSigOps += GetLegacySigOpCount(tx);
+    }
+    if (nSigOps > MaxBlockSigops(::GetSerializeSize(block, SER_NETWORK, PROTOCOL_VERSION)))
+        return state.DoS(100, error("CheckBlock(): out-of-bounds SigOpCount"), REJECT_INVALID, "bad-blk-sigops", true);
 
     return true;
 }
