@@ -1591,8 +1591,12 @@ CAmount GetBlockSubsidy(int nHeight, const Consensus::Params& consensusParams)
     return nSubsidy;
 }
 
+bool fForceInitialBlockDownload = false;
 bool IsInitialBlockDownload()
 {
+    if (fForceInitialBlockDownload)
+        return false;
+
     const CChainParams& chainParams = Params();
     LOCK(cs_main);
     if (fImporting || fReindex)
